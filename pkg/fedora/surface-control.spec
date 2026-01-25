@@ -31,18 +31,16 @@ install -D -m755 "target/release/surface" "%{buildroot}/usr/bin/surface"
 install -D -m644 "target/surface.bash" "%{buildroot}/usr/share/bash-completion/completions/surface"
 install -D -m644 "target/_surface" "%{buildroot}/usr/share/zsh/site-functions/_surface"
 install -D -m644 "target/surface.fish" "%{buildroot}/usr/share/fish/vendor_completions.d/surface.fish"
-install -D -m644 "systemd/surface-rapl.service" "%{buildroot}/usr/lib/systemd/system/surface-rapl.service"
-install -D -m744 "systemd/surface-rapl.sh" "%{buildroot}/usr/libexec/surface-rapl.sh"
-mkdir -p "%{buildroot}/usr/lib/systemd/system/multi-user.target.wants"
-ln -sT "../surface-rapl.service" "%{buildroot}/usr/lib/systemd/system/multi-user.target.wants/surface-rapl.service"
-mkdir -p "%{buildroot}/usr/lib/systemd/system/suspend.target.wants"
-ln -sT "../surface-rapl.service" "%{buildroot}/usr/lib/systemd/system/suspend.target.wants/surface-rapl.service"
+install -D -m644 "target/systemd/surface-rapl.service" "%{buildroot}/usr/lib/systemd/system/surface-rapl.service"
+install -D -m744 "target/systemd/surface-rapl.sh" "%{buildroot}/usr/libexec/surface-rapl.sh"
 
 %files
 /usr/bin/surface
 /usr/share/bash-completion/completions/surface
 /usr/share/zsh/site-functions/_surface
 /usr/share/fish/vendor_completions.d/surface.fish
+/usr/lib/systemd/system/surface-rapl.service
+/usr/libexec/surface-rapl.sh
 
 %changelog
 * Sun Jan 25 2026 Maximilian Luz <luzmaximilian@gmail.com> - 0.5.0-1
