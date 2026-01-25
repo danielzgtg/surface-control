@@ -1,5 +1,5 @@
 Name:       surface-control
-Version:    0.4.12
+Version:    0.5.0
 Release:    1%{?dist}
 Summary:    Control various aspects of Microsoft Surface devices from the shell
 
@@ -45,6 +45,9 @@ ln -sT "../surface-rapl.service" "%{buildroot}/usr/lib/systemd/system/suspend.ta
 /usr/share/fish/vendor_completions.d/surface.fish
 
 %changelog
+* Sun Jan 25 2026 Maximilian Luz <luzmaximilian@gmail.com> - 0.5.0-1
+- Add systemd service to disable Intel RAPL PL4 on resume
+
 * Sun Jan 04 2026 Maximilian Luz <luzmaximilian@gmail.com> - 0.4.12-1
 - Add profile prev/next commands.
 
