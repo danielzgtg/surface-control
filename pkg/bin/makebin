@@ -72,6 +72,9 @@ package() {
     mkdir -p "$pkgdir/usr/lib/systemd/system/suspend.target.wants"
     ln -sT "../surface-rapl.service" "$pkgdir/usr/lib/systemd/system/suspend.target.wants/surface-rapl.service"
 
+    # hotfixes
+    install -D -m644 "etc/modprobe.d/surface-debian-disable-algif.conf" "$pkgdir/etc/modprobe.d/surface-debian-disable-algif.conf"
+
     # copy license
     install -D -m644 "LICENSE" "$pkgdir/LICENSE"
 

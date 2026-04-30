@@ -1,3 +1,9 @@
+surface-control (0.5.1-1) unstable; urgency=medium
+
+  * Hotfix kernel CVE-2026-31431
+
+ -- Daniel Tang <danielzgtg.opensource@gmail.com>  Thu, 30 Apr 2026 04:32:59 -0400
+
 surface-control (0.5.0-1) unstable; urgency=medium
 
   * Add systemd service to disable Intel RAPL PL4 on resume
